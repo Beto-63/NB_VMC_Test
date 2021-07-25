@@ -10,38 +10,50 @@ package modelo;
  * @author isaz
  */
 public class Modelo {
-    private int numeroUno;
-    private int numeroDos;
-    private int resultado;
+    private float numeroUno;
+    private float numeroDos;
+    private float resultado;
 
 // Setter y Getters generados automaticamente por <click derecho> en la pantalla de edicion
 // <insert code> <setter & Getter> selecciono y listo    
-    public int getNumeroUno() {
+    public float getNumeroUno() {
         return numeroUno;
     }
 
-    public void setNumeroUno(int numeroUno) {
+    public void setNumeroUno(float numeroUno) {
         this.numeroUno = numeroUno;
     }
 
-    public int getNumeroDos() {
+    public float getNumeroDos() {
         return numeroDos;
     }
 
-    public void setNumeroDos(int numeroDos) {
+    public void setNumeroDos(float numeroDos) {
         this.numeroDos = numeroDos;
     }
 
-    public int getResultado() {
+    public float getResultado() {
         return resultado;
     }
 
-    public void setResultado(int resultado) {
+    public void setResultado(float resultado) {
         this.resultado = resultado;
     }
 // aqui va la funcion de matematicas
-    public int multiplicar() {
+    public float multiplicar() {
         this.resultado = this.numeroUno * this.numeroDos;
+        return this.resultado;
+    }
+    public float sumar() {
+        this.resultado = this.numeroUno + this.numeroDos;
+        return this.resultado;
+    }
+    public float restar() {
+        this.resultado = this.numeroUno - this.numeroDos;
+        return this.resultado;
+    }
+    public float dividir() {
+        this.resultado = this.numeroUno / this.numeroDos;
         return this.resultado;
     }
 }

@@ -30,43 +30,58 @@ public class Vista extends javax.swing.JFrame {
         txtNumeroUno = new javax.swing.JTextField();
         txtNumeroDos = new javax.swing.JTextField();
         txtResultado = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        lblOperacion = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         btnMultiplicar = new javax.swing.JButton();
+        btnSumar = new javax.swing.JButton();
+        btnRestar = new javax.swing.JButton();
+        btnDividir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel1.setText(" X");
+        lblOperacion.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        lblOperacion.setText(" X");
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel2.setText("Resultado");
 
         btnMultiplicar.setText("Multiplicar");
 
+        btnSumar.setText("Sumar");
+        btnSumar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSumarActionPerformed(evt);
+            }
+        });
+
+        btnRestar.setText("Restar");
+
+        btnDividir.setText("Dividir");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(56, 56, 56)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(101, 101, 101)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txtNumeroDos, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                                    .addComponent(txtNumeroUno))
-                                .addGap(58, 58, 58)
-                                .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(41, 41, 41)
+                        .addComponent(lblOperacion, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(101, 101, 101)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(134, 134, 134)
-                        .addComponent(btnMultiplicar)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txtNumeroDos, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                                .addComponent(txtNumeroUno))
+                            .addComponent(btnSumar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnMultiplicar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(58, 58, 58)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnDividir)
+                            .addComponent(btnRestar)
+                            .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(106, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -76,19 +91,29 @@ public class Vista extends javax.swing.JFrame {
                 .addComponent(txtNumeroUno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                    .addComponent(lblOperacion)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNumeroDos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnMultiplicar)
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSumar)
+                    .addComponent(btnRestar))
+                .addGap(4, 4, 4)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnMultiplicar)
+                    .addComponent(btnDividir))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSumarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -126,9 +151,12 @@ public class Vista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnDividir;
     public javax.swing.JButton btnMultiplicar;
-    private javax.swing.JLabel jLabel1;
+    public javax.swing.JButton btnRestar;
+    public javax.swing.JButton btnSumar;
     private javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel lblOperacion;
     public javax.swing.JTextField txtNumeroDos;
     public javax.swing.JTextField txtNumeroUno;
     public javax.swing.JTextField txtResultado;
