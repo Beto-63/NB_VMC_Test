@@ -28,7 +28,7 @@ public class Controlador implements ActionListener{
     }
 //  Pone un titulo a la ventana y la pone a arrancar en el centro de la pantalla
     public void iniciar(){
-        view.setTitle("Segundo intento  de View-Mod-Cont de Calculadora");
+        view.setTitle("Segunda version de View-Mod-Cont de Calculadora");
         view.setLocationRelativeTo(null);
     }
 //  Desde el controlador obtengo los valores de la vista y los pongo en el modelo e invoco el metodo de multiplicar 
