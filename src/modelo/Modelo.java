@@ -10,9 +10,9 @@ package modelo;
  * @author isaz
  */
 public class Modelo {
-    private float numeroUno;
-    private float numeroDos;
-    private float resultado;
+    private float numeroUno ;
+    private float numeroDos ;
+    private float resultado ;
 
 // Setter y Getters generados automaticamente por <click derecho> en la pantalla de edicion
 // <insert code> <setter & Getter> selecciono y listo    
@@ -55,5 +55,28 @@ public class Modelo {
     public float dividir() {
         this.resultado = this.numeroUno / this.numeroDos;
         return this.resultado;
+    }
+    public float modulo() { //necesita implementarse como la division
+        this.resultado = this.numeroUno % this.numeroDos;
+        return this.resultado;
+    }
+    public void primo() {   
+        int cont = 2, divisores = 2;
+        while (cont < this.numeroUno){
+            if (this.numeroUno%2 != 0){
+                cont ++ ;
+            }else{
+                divisores ++;
+                cont++;
+                break;
+            }
+        if (divisores>2){
+            this.resultado = 0;         //es decir la respuesta es negativa
+        }else{
+            this.resultado = 1;
+
+        }
+        
+        }
     }
 }
