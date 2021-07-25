@@ -24,6 +24,8 @@ public class Controlador implements ActionListener{
         this.view.btnSumar.addActionListener(this);
         this.view.btnRestar.addActionListener(this);
         this.view.btnDividir.addActionListener(this);
+        this.view.btnModulo.addActionListener(this);
+        this.view.btnPrimo.addActionListener(this);
 // cuando se invoca este constructor, se le dice que debe estar pendiente de listen a el btnMultiplicar CREO!        
     }
 //  Pone un titulo a la ventana y la pone a arrancar en el centro de la pantalla
@@ -37,7 +39,11 @@ public class Controlador implements ActionListener{
 //  la instruccion if (e.getSource() == view.btnSumar) consulta al evento e, de cual btn proviene 
     public void actionPerformed(ActionEvent e){
         model.setNumeroUno(Float.parseFloat(view.txtNumeroUno.getText()));
-        model.setNumeroDos(Float.parseFloat(view.txtNumeroDos.getText()));
+        if(view.txtNumeroDos.getText().equals("")){
+            view.txtNumeroDos.setText("0");
+        }
+        model.setNumeroDos(Float.parseFloat(view.txtNumeroDos.getText()));  // Tego problemas cuando lo dejo en blanco
+        
         if (e.getSource() == view.btnMultiplicar){
             model.multiplicar(); 
             view.lblOperacion.setText(" X ");
@@ -62,10 +68,23 @@ public class Controlador implements ActionListener{
                 view.txtResultado.setText("Error.");
             }
         }
-        
+        if (e.getSource() == view.btnModulo){
+            view.lblOperacion.setText(" % ");
+            if ((model.getNumeroDos() != 0)){
+                model.modulo();
+                view.txtResultado.setText(String.valueOf(model.getResultado()));
+            } else {
+                view.txtResultado.setText("Error.");
+            }
+        }
+        if (e.getSource() == view.btnPrimo){
+            view.lblOperacion.setText("Pri");
+            model.primo();
+            if (model.getResultado() == 0){
+                view.txtResultado.setText("NO es primo.");
+            } else {
+                view.txtResultado.setText("SI es primo.");
+            }
+        }
     }
-    
-    
-    
-    
 }
